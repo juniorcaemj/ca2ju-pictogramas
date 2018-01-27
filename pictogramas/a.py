@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-import os
+'''import os
 
 direc = os.getcwd() # Get current working directory
 ext = '.png' # Select your file delimiter
@@ -30,4 +30,20 @@ for i in file_dict:
     arq.write(',')
 
 arq.write('}')
-arq.close()
+arq.close()'''
+
+import os
+
+"""
+Renames the filenames within the same directory to be Unix friendly
+(1) Changes spaces to hyphens
+(2) Makes lowercase (not a Unix requirement, just looks better ;)
+Usage:
+python rename.py
+"""
+
+path =  os.getcwd()
+filenames = os.listdir(path)
+
+for filename in filenames:
+    os.rename(filename, filename.lower())
